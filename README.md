@@ -1,73 +1,50 @@
-# Getting Started with Create React App
+# Description
+### V1.0 KISS(Keep It Simple Stupid)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+This is an intoductory personal project to have an online to-do list using these technologies:
+* front-end: React.js
+* backend  : Golang & Gin
+* database : MySQL
 
-In the project directory, you can run:
 
-### `npm start`
+Why did I choose these technologies?
+* React.js is a popular framework 
+* Golang is an easy to use backend language with an easy to setup Gin framework for API creation. Java would have had too much overhead and been slower to setup if we wanted to use Dropwizard framework.
+* MySQL makes most sense for a very simple ToDoList table with just 2 items: _id and text
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Why not other language/framework/no-sql?
+* As I mentioned above React.js and Golang are popular frameworks with lots of online support and are easy to setup and beging using. 
+* No-sql is a more interesting question. I could use a Document NoSQL db, which is the closest to what makes sense, to hold more than just text e.g. type of item, due date, etc. However, this is more complicated than needed for now. In a future version I'll use it, even if it may not make the most sense, so I will relook into the design of this to make it a fun learning experience.
 
-### `npm test`
+What is the user experience?
+* V1.0 is a single user experience to run locally(future versions will delve into the topic of scaling users, access and maybe even cloud e.g. AWS/Azure/Google Cloud/OCI)
+* Drop down for states OPEN, CLOSED, ALL items
+* "Create" button for a popup to for adding a new item
+* Checklist view. Crossed out text with x'ed out boxes for CLOSED items
+* Tap item to open up popup to edit the content.
+* Ordered by creation time is descending order to have newest at top. As a user I wouldn't want to have to scroll a huge list of items if I choose to view ALL items as well.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+What does data flow look like?
+* Gin is a the Golang framework to support API CRUDL calls: Create, Update, Delete, List
 
-### `npm run build`
+Database creation?
+* Golang has a MySQL driver for creating if a table if it doesn't already exist interface with our local DB.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Pre-requisite
+Have MySQL, golang and a web browser available.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Running
 
-### `npm run eject`
+In one terminal screen run following commands to run the front end React.js server:
+```
+cd frontend
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# OnlineToDoList
-Localhost to do list website using Golang, Gin web framework, React.js and MySQL
+In another terminal screen, run the following to start the backend golang server:
+```
+# TODO
+```
